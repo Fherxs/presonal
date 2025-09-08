@@ -109,6 +109,142 @@
   }
 }
 
+/* ===================== GLOBAL ===================== */
+html, body {
+  overflow-x: hidden; /* cegah scroll horizontal */
+}
+
+section {
+  padding: 60px 0; /* seragam padding semua section */
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  padding: 10px 15px;
+}
+.navbar-brand {
+  font-size: 1.4rem;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+/* HP kecil (<=480px, contoh Oppo) */
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    padding: 8px 0;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Tablet (<=768px) */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+}
+
+/* Laptop / Desktop besar (>=1200px) */
+@media (min-width: 1200px) {
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 17px;
+    margin-left: 15px;
+  }
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh;
+  padding: 100px 0;
+}
+.hero h1 {
+  font-size: 2.5rem;
+}
+.hero p {
+  font-size: 1rem;
+}
+.hero-img img {
+  max-width: 80%;
+}
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .hero-img img {
+    max-width: 60%;
+    margin-top: 20px;
+  }
+}
+
+/* ===================== ABOUT ===================== */
+#about img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+#about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===================== SKILLS ===================== */
+#skills .progress {
+  height: 10px;
+  border-radius: 5px;
+}
+#skills h6 {
+  font-size: 0.95rem;
+}
+
+/* ===================== PROJECTS ===================== */
+#projects .card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+#projects img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* ===================== CONTACT ===================== */
+#contact form input,
+#contact form textarea {
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  font-size: 0.9rem;
+}
+footer a {
+  font-size: 1.2rem;
+}
+
+
   </style>
 </head>
 <body>
