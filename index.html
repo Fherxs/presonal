@@ -413,7 +413,6 @@ footer a:hover {
 </section>
 
 
-  <!-- Contact Section -->
 <section id="contact" class="py-5 text-light" style="background: linear-gradient(135deg, #0d6efd, #0dcaf0);">
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
@@ -422,15 +421,15 @@ footer a:hover {
     </div>
     <div class="row justify-content-center">
       <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
-        <form>
+        <form id="waForm">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Nama Anda" required>
+            <input type="text" id="nama" class="form-control" placeholder="Nama Anda" required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Email Anda" required>
+            <input type="email" id="email" class="form-control" placeholder="Email Anda" required>
           </div>
           <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+            <textarea id="pesan" class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
           </div>
           <button type="submit" class="btn btn-light fw-bold px-4">Kirim Pesan</button>
         </form>
@@ -438,6 +437,25 @@ footer a:hover {
     </div>
   </div>
 </section>
+
+<script>
+  // Nomor WA disembunyikan (dibagi 2 biar ga langsung kelihatan di source code)
+  const part1 = "+62823"; 
+  const part2 = "18409220"; 
+  const noWa = part1 + part2; // hasil: +6282318409220
+
+  document.getElementById("waForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    let nama = document.getElementById("nama").value;
+    let email = document.getElementById("email").value;
+    let pesan = document.getElementById("pesan").value;
+
+    let url = `https://wa.me/${noWa}?text=Halo, saya ${nama} (${email}).%0A%0A${pesan}`;
+    window.open(url, "_blank");
+  });
+</script>
+
 
 
   <!-- Footer -->
@@ -464,6 +482,7 @@ footer a:hover {
   </script>
 </body>
 </html>
+
 
 
 
