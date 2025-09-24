@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Saya</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; /* cegah scroll horizontal */
+    }
+
+    /* ===================== NAVBAR ===================== */
+    .navbar {
+      background: linear-gradient(135deg, #f80b3e, #f04973);
+      padding: 10px 15px;
+    }
+    .navbar-brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-size: 1rem;
+      margin-left: 10px;
+      font-weight: 500;
+    }
+    @media (max-width: 576px) {
+      .navbar-nav .nav-link {
+        text-align: center;
+        padding: 12px 0;
+        margin-left: 0;
+      }
+      .navbar-brand { font-size: 1.2rem; }
+    }
+    @media (min-width: 1200px) {
+      .navbar-brand { font-size: 1.6rem; }
+      .navbar-nav .nav-link { font-size: 17px; margin-left: 15px; }
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      background: #111;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .hero .btn-custom {
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    .btn-red {
+      background: #e63946;
+      color: #fff;
+    }
+    .btn-red:hover {
+      background: #d62828;
+      color: #fff;
+    }
+    .btn-outline {
+      border: 2px solid #e63946;
+      color: #e63946;
+    }
+    .btn-outline:hover {
+      background: #e63946;
+      color: #fff;
+    }
+    .hero-img img {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    @media (max-width: 768px) {
+      .hero { text-align: center; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 0.95rem; }
+      .hero-img img {
+        max-width: 250px;
+        margin-top: 20px;
+      }
+    }
+
+    /* ===================== ABOUT ===================== */
+    #about img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    #about p { font-size: 1rem; line-height: 1.6; }
+
+    /* ===================== SKILLS ===================== */
+    #skills .progress { height: 12px; border-radius: 5px; }
+    #skills h6 { font-size: 0.95rem; }
+
+    /* ===================== PROJECTS ===================== */
+    #projects .card {
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #projects .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    #projects img {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    /* ===================== CONTACT ===================== */
+    #contact form input,
+    #contact form textarea {
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      font-size: 0.9rem;
+      background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+      color: #fff;
+      padding: 30px 0;
+    }
+    footer a {
+      color: #adb5bd;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    footer a:hover { color: #fff; }
+
+    /* ===================== GLOBAL ===================== */
+    html { scroll-behavior: smooth; }
+    .navbar .nav-link.active {
+      font-weight: 700;
+      color: #ffd700 !important;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70" tabindex="0">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text -->
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-right">
+        <h5 class="text-danger fw-bold">HELLO!</h5>
+        <h1>I Am <span class="text-danger" id="typed"></span></h1>
+        <p>Saya seorang Junior Web Developer dengan pengalaman membuat website responsif, modern, dan elegan menggunakan HTML, CSS, JavaScript, dan Bootstrap.</p>
+        <a href="#projects" class="btn btn-custom btn-red">View Work</a>
+        <a href="#contact" class="btn btn-custom btn-outline">Hire Me</a>
+      </div>
+      <!-- Image -->
+      <div class="col-md-6 text-center hero-img mt-4 mt-md-0" data-aos="fade-left">
+        <img src="img/fherry.png" alt="Profile">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5 bg-dark text-light d-flex align-items-center" style="min-height: 100vh;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+        <img src="img/fherry.png" alt="About Me" class="img-fluid shadow">
+      </div>
+      <div class="col-md-7 text-center text-md-start" data-aos="fade-left">
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <p class="lead">Saya adalah seorang <span class="text-danger fw-bold">Junior Web Developer</span> yang memiliki semangat tinggi ...</p>
+        <ul class="list-unstyled mt-4">
+          <li><strong>Nama :</strong> Fherry Satiano</li>
+          <li><strong>Email :</strong> FherrySatiano509@Gmail.com</li>
+          <li><strong>Telepon :</strong> +62 82318409220</li>
+          <li><strong>Lokasi :</strong> Salatiga, Indonesia</li>
+        </ul>
+        <a href="#contact" class="btn btn-custom btn-red mt-3">Hire Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-5 bg-light d-flex align-items-center" style="min-height: 100vh;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">My Skills</h2>
+      <p class="text-muted">Beberapa kemampuan yang saya kuasai</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h6 class="fw-bold">HTML <span class="float-end">80%</span></h6>
+        <div class="progress mb-3"><div class="progress-bar bg-danger" style="width:80%"></div></div>
+        <h6 class="fw-bold">CSS <span class="float-end">70%</span></h6>
+        <div class="progress mb-3"><div class="progress-bar bg-primary" style="width:70%"></div></div>
+        <h6 class="fw-bold">Bootstrap <span class="float-end">80%</span></h6>
+        <div class="progress mb-3"><div class="progress-bar" style="width:80%;background:#7952b3"></div></div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h6 class="fw-bold">Java <span class="float-end">35%</span></h6>
+        <div class="progress mb-3"><div class="progress-bar bg-warning" style="width:35%"></div></div>
+        <h6 class="fw-bold">JavaScript <span class="float-end">25%</span></h6>
+        <div class="progress mb-3"><div class="progress-bar bg-success" style="width:25%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-5 bg-light" style="min-height: 100vh;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">My Projects</h2>
+      <p class="lead">Beberapa project yang pernah saya kerjakan</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card h-100 shadow">
+          <img src="img/project1.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Project Website 1</h5>
+            <p class="card-text">Website company profile modern dengan desain responsif.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 shadow">
+          <img src="img/project2.jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Project E-Commerce</h5>
+            <p class="card-text">Sistem toko online dengan integrasi cart dan checkout.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 shadow">
+          <img src="img/project3.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Project Portfolio</h5>
+            <p class="card-text">Website portfolio personal dengan animasi elegan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 text-light" style="min-height:100vh; background:linear-gradient(135deg,#0d6efd,#0dcaf0)">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">Contact Me</h2>
+      <p class="lead">Jangan ragu untuk menghubungi saya 😊</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+        <form>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Nama Anda" required></div>
+          <div class="mb-3"><input type="email" class="form-control" placeholder="Email Anda" required></div>
+          <div class="mb-3"><textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea></div>
+          <button type="submit" class="btn btn-light fw-bold px-4">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4">
+  <div class="container" data-aos="fade-up">
+    <p class="mb-2">&copy; 2025 FherrySatiano. All Rights Reserved.</p>
+    <div>
+      <a href="https://facebook.com" target="_blank" class="me-3"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" class="me-3"><i class="bi bi-instagram"></i></a>
+      <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+  AOS.init({ duration: 1000, once: false });
+  new Typed("#typed", {
+    strings: ["Fherry Satiano", "a Junior Web Developer", "a Freelancer"],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1500,
+    loop: true
+  });
+
+  new bootstrap.ScrollSpy(document.body, {
+    target: '#navbarNav',
+    offset: 70
+  })
+</script>
+</body>
+</html>
